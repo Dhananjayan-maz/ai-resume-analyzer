@@ -1,0 +1,20 @@
+from django.db import models
+from django.contrib.auth.models import User
+
+
+class Resume(models.Model):
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    resume = models.FileField(upload_to="resumes/")
+
+    extracted_text = models.TextField(blank=True)
+
+    predicted_role = models.CharField(max_length=100, blank=True)
+
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    
+    gemini_feedback = models.TextField(blank=True)  
+
+    def __str__(self):
+        return f"{self.user.username} - Resume"
