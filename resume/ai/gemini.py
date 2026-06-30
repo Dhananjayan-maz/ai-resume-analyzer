@@ -1,14 +1,11 @@
 import google.generativeai as genai
 import os
 
-# Configure Gemini
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-
-# Load Gemini Model
-model = genai.GenerativeModel("gemini-2.5-flash")
-
-
 def analyze_resume(resume_text, predicted_role):
+    
+    genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+
+    model = genai.GenerativeModel("gemini-2.5-flash")
 
     prompt = f"""
 You are an experienced ATS Resume Reviewer.
