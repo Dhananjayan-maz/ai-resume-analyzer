@@ -163,6 +163,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOWED_ORIGINS = [
 "http://localhost:5173", # Vite
 "http://localhost:3000", # Create React App
+"https://ai-resume-analyzer-frontend-vcpi.onrender.com",
 ]
 CORS_ALLOW_ALL_ORIGINS = True
 
