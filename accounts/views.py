@@ -69,24 +69,3 @@ def dashboard(request):
         ).data if latest_resume else None
 
     })
-
-
-# @api_view(["GET"])
-# @permission_classes([IsAuthenticated])
-# def dashboard(request):
-
-#     resumes = Resume.objects.filter(user=request.user).order_by("-uploaded_at")
-
-#     latest_role = ""
-
-#     if resumes.exists():
-#         latest_role = resumes.first().predicted_role
-
-#     return Response(
-#         {
-#             "message": f"Welcome {request.user.username}",
-#             "username": request.user.username,
-#             "total_resumes": resumes.count(),
-#             "latest_role": latest_role,
-#         }
-#     )
